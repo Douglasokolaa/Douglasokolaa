@@ -1,0 +1,952 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hi, I&#x27;m Doug👋</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			text-indent: -1.7em;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {}
+
+		.highlight-gray {
+			color: rgb(155, 154, 151);
+		}
+
+		.highlight-brown {
+			color: rgb(100, 71, 58);
+		}
+
+		.highlight-orange {
+			color: rgb(217, 115, 13);
+		}
+
+		.highlight-yellow {
+			color: rgb(223, 171, 1);
+		}
+
+		.highlight-teal {
+			color: rgb(15, 123, 108);
+		}
+
+		.highlight-blue {
+			color: rgb(11, 110, 153);
+		}
+
+		.highlight-purple {
+			color: rgb(105, 64, 165);
+		}
+
+		.highlight-pink {
+			color: rgb(173, 26, 114);
+		}
+
+		.highlight-red {
+			color: rgb(224, 62, 62);
+		}
+
+		.highlight-gray_background {
+			background: rgb(235, 236, 237);
+		}
+
+		.highlight-brown_background {
+			background: rgb(233, 229, 227);
+		}
+
+		.highlight-orange_background {
+			background: rgb(250, 235, 221);
+		}
+
+		.highlight-yellow_background {
+			background: rgb(251, 243, 219);
+		}
+
+		.highlight-teal_background {
+			background: rgb(221, 237, 234);
+		}
+
+		.highlight-blue_background {
+			background: rgb(221, 235, 241);
+		}
+
+		.highlight-purple_background {
+			background: rgb(234, 228, 242);
+		}
+
+		.highlight-pink_background {
+			background: rgb(244, 223, 235);
+		}
+
+		.highlight-red_background {
+			background: rgb(251, 228, 228);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(55, 53, 47, 0.6);
+			fill: rgba(55, 53, 47, 0.6);
+		}
+
+		.block-color-brown {
+			color: rgb(100, 71, 58);
+			fill: rgb(100, 71, 58);
+		}
+
+		.block-color-orange {
+			color: rgb(217, 115, 13);
+			fill: rgb(217, 115, 13);
+		}
+
+		.block-color-yellow {
+			color: rgb(223, 171, 1);
+			fill: rgb(223, 171, 1);
+		}
+
+		.block-color-teal {
+			color: rgb(15, 123, 108);
+			fill: rgb(15, 123, 108);
+		}
+
+		.block-color-blue {
+			color: rgb(11, 110, 153);
+			fill: rgb(11, 110, 153);
+		}
+
+		.block-color-purple {
+			color: rgb(105, 64, 165);
+			fill: rgb(105, 64, 165);
+		}
+
+		.block-color-pink {
+			color: rgb(173, 26, 114);
+			fill: rgb(173, 26, 114);
+		}
+
+		.block-color-red {
+			color: rgb(224, 62, 62);
+			fill: rgb(224, 62, 62);
+		}
+
+		.block-color-gray_background {
+			background: rgb(235, 236, 237);
+		}
+
+		.block-color-brown_background {
+			background: rgb(233, 229, 227);
+		}
+
+		.block-color-orange_background {
+			background: rgb(250, 235, 221);
+		}
+
+		.block-color-yellow_background {
+			background: rgb(251, 243, 219);
+		}
+
+		.block-color-teal_background {
+			background: rgb(221, 237, 234);
+		}
+
+		.block-color-blue_background {
+			background: rgb(221, 235, 241);
+		}
+
+		.block-color-purple_background {
+			background: rgb(234, 228, 242);
+		}
+
+		.block-color-pink_background {
+			background: rgb(244, 223, 235);
+		}
+
+		.block-color-red_background {
+			background: rgb(251, 228, 228);
+		}
+
+		.select-value-color-default {
+			background-color: rgba(206, 205, 202, 0.5);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(155, 154, 151, 0.4);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(140, 46, 0, 0.2);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(245, 93, 0, 0.2);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(233, 168, 0, 0.2);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(0, 135, 107, 0.2);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(0, 120, 223, 0.2);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(103, 36, 222, 0.2);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(221, 0, 129, 0.2);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 0, 26, 0.2);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+	</style>
+</head>
+
+<body>
+	<article id="56c73d50-96cd-4ec7-832a-a605bafa600b" class="page mono">
+		<header>
+			<h1 class="page-title">Hi, I&#x27;m Doug👋</h1>
+		</header>
+		<div class="page-body">
+			<h2 id="2c8e779e-249f-4780-a755-421793c7369e" class="">Backend Developer/DevOps</h2>
+			<p id="81bdb487-e2d9-4413-86c5-8ebac88f012a" class="">
+			</p>
+			<figure id="c1b705b6-a358-4485-833d-b5a75695e568" class="link-to-page"><a href="https://www.notion.so/My-Work-c1b705b6a3584485833db5a75695e568"><span class="icon">💼</span>My Work </a></figure>
+			<p id="c070cbde-7a87-4f46-8f6b-f150a63cfeb1" class="">
+			</p>
+			<figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="1e606508-1004-4f8a-b4ca-c360349b31ab">
+				<div style="font-size:1.5em"><span class="icon">🇳🇬</span></div>
+				<div style="width:100%">I&#x27;m a Backend Developer / DevOps based in Nigeria with a passion for building scalable solutions and Managing IT infrastructures
+
+					Very much a generalist; I&#x27;ve amassed more than 3 years of experience and strong familiarity with PHP, Golang; a creative problem solver with demonstrated ability to work on multiple projects simultaneously and is desirous in establishing a career with a world-renowned IT company. Working in sectors such as Government, Entertainment, CRM industry, Standardised Solution industry.
+
+					Restless and curious with the growth mindset, I look at ways of improving all the time.</div>
+			</figure>
+			<p id="5b6e589f-38d3-4ff0-b190-8d72a26d246b" class="">
+			</p>
+			<hr id="51097c8e-62da-49c3-8718-690fb24a951c" />
+			<h1 id="96bee9f8-5c63-4f4b-bfdb-37008245155e" class="">Core Competencies 💪 </h1>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0f03484a-eb91-46c6-948f-8d43ca9b0c61">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Ability to apply software development methodologies.</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="73e73827-50ad-41db-bc5c-1246caf43da3">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Ability to embrace research.</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b7d7894d-9610-47e5-b4ee-f335c9e8be19">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Strong attention to detail.</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d4971a5d-4c45-4d36-988f-ccd889b242bc">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Good communicator.</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="178913cc-c129-4f25-813b-c3e9d9d0f732">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Ability to provide clear, detailed documentation.</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4db958d6-cf73-4110-8276-dcfe1afac591">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">An intense desire for growth and self-improvement.</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="62683095-b9ae-4795-b93e-678c48292676">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Provide technical support and manage IT infrastructures on the cloud.</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8ad00b20-239d-48e2-8c3e-31ff3127d3ad">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Self-starter.</div>
+			</figure>
+			<hr id="b834e767-7a49-4fe6-a0f8-f1a0703b13bd" />
+			<h1 id="6f612783-d1ec-488b-bc5f-378d29510fbb" class="">Some Recent Projects</h1>
+			<div id="59437c7f-550e-4e00-aaa0-de4ba67e64db" class="column-list">
+				<div id="aa4d0d8e-4352-4b6d-ae9e-7633ff422fe0" style="width:50%" class="column">
+					<figure id="1c88f26d-00d1-4154-b1ca-1a37c49a0eaa" class="image"><a href="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:720px" src="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" /></a></figure>
+					<figure id="1fa7930e-41d4-4abe-8693-ba8d2ebede0c"><a href="/project-link" class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title">CLLTIVE Creative Page (WEB/Mobile)</div>
+									<div class="bookmark-description">30 Screens, Last modified on Feb 09, 2020 09:51 GMT</div>
+								</div>
+								<div class="bookmark-href"><img src="https://xd.adobe.com/static/images/xd_favicon-b2ee7867cb9be9ee4055df64f32dcd58f3461fe3.ico" class="icon bookmark-icon" />/project-link</div>
+							</div><img src="https://public-v2links.adobecc.com/1fac07cd-414d-410d-74cd-ceac09cb4f38/component?params=component_id%3A450b5759-8b16-47a3-9385-ed18c0f32e16&amp;params=version%3A5&amp;token=1604958270_da39a3ee_c22723e02efee5fb2c2d7a20a51107fd87f8f9ff&amp;api_key=CometServer1" class="bookmark-image" />
+						</a></figure>
+				</div>
+				<div id="60e1fa2c-681b-4023-90e1-c60e3bc31e83" style="width:50%" class="column">
+					<figure id="a43f966f-4e58-492d-b17b-3cd5773a3fce" class="image"><a href="/project-link"><img style="width:1600px" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" /></a></figure>
+					<figure id="0f9d280c-1eaa-4c9d-9c16-157396a58262"><a href="https://xd.adobe.com/view/0fade128-9224-4668-98f4-5839df129843-5afe/" class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title">ABiTrader</div>
+									<div class="bookmark-description">13 Screens, Published on Aug 04, 2020 01:45 GMT</div>
+								</div>
+								<div class="bookmark-href"><img src="https://xd.adobe.com/static/images/xd_favicon-b2ee7867cb9be9ee4055df64f32dcd58f3461fe3.ico" class="icon bookmark-icon" />/project-link</div>
+							</div><img src="https://cdn-sharing.adobecc.com/id/urn:aaid:sc:US:0fade128-9224-4668-98f4-5839df129843;version=0?component_id=b7177d4a-61a8-425d-99a6-3a0a5fa24626&amp;api_key=CometServer1&amp;access_token=1604914242_urn%3Aaaid%3Asc%3AUS%3A0fade128-9224-4668-98f4-5839df129843%3Bpublic_10d2efcd34dc44867faba9ff2c0ef86cf611a189" class="bookmark-image" />
+						</a></figure>
+				</div>
+			</div>
+			<p id="88447514-f108-4ecb-b558-53dd99fff6c7" class="">
+			</p>
+			<div id="aa1ceff7-7b97-4c2f-934a-51863ba2b278" class="column-list">
+				<div id="2c93ab32-7f5d-4101-83ae-c30d1fd920d1" style="width:50%" class="column">
+					<figure id="0fb0fb7a-98cc-4d2c-a7d2-157c0d8e185f" class="image"><a href="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:1600px" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" /></a></figure>
+					<figure id="b515504d-803a-45d0-b98c-532aaef69315"><a href="/project-link" class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title">CommonRelief-updated</div>
+									<div class="bookmark-description">49 Screens, Last modified on Nov 06, 2020 10:51 GMT</div>
+								</div>
+								<div class="bookmark-href"><img src="https://xd.adobe.com/static/images/xd_favicon-b2ee7867cb9be9ee4055df64f32dcd58f3461fe3.ico" class="icon bookmark-icon" />/project-link</div>
+							</div><img src="https://public-v2links.adobecc.com/a1355bd2-63fb-494d-4b08-ab20b1c7f177/component?params=component_id%3A42156033-3f7a-459a-89b2-2803e56ba9e8&amp;params=version%3A2&amp;token=1604959077_da39a3ee_c2b63bccc082a148958740c360e544ddafd5f4a6&amp;api_key=CometServer1" class="bookmark-image" />
+						</a></figure>
+				</div>
+				<div id="53994587-341d-4f20-8dff-53bbb026c8a2" style="width:50%" class="column">
+					<figure id="e8586f25-c3d0-4394-9c7b-3a82c9933191" class="image"><a href="https://images.unsplash.com/photo-1532499016263-f2c3e89de9cd?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img style="width:2802px" src="https://images.unsplash.com/photo-1532499016263-f2c3e89de9cd?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" /></a></figure>
+					<figure id="6f5e0005-948b-4d54-9205-884593677ce4"><a href="/project-link" class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title">Flow 1</div>
+									<div class="bookmark-description">66 Screens, Published on Nov 07, 2020 00:08 GMT</div>
+								</div>
+								<div class="bookmark-href"><img src="https://xd.adobe.com/static/images/xd_favicon-b2ee7867cb9be9ee4055df64f32dcd58f3461fe3.ico" class="icon bookmark-icon" />/project-link</div>
+							</div><img src="https://cdn-sharing.adobecc.com/id/urn:aaid:sc:US:596d5f07-b729-4392-b122-0e4c2f94c1bc;version=0?component_id=12964178-45d5-4338-ab2b-e4b9f7e15e78&amp;api_key=CometServer1&amp;access_token=1604915558_urn%3Aaaid%3Asc%3AUS%3A596d5f07-b729-4392-b122-0e4c2f94c1bc%3Bpublic_735cfce98d339ed1602467835f37104e5e063078" class="bookmark-image" />
+						</a></figure>
+				</div>
+			</div>
+			<p id="435b5fb2-caa2-4889-b1eb-52cd0e0b7b05" class="">
+			</p>
+			<p id="711b11de-93f3-47d3-b3a1-072212732b96" class="">
+			</p>
+			<hr id="0dd335ec-954b-412c-8fb4-7c75e9f407d2" />
+			<h1 id="f9dd7ec6-786b-4020-812a-08a23a1f23fc" class="">Tools I use frequently 🔨</h1>
+			<h3 id="c0fe8aca-baff-4d9d-89c1-8efa7e54a36c" class="">Development - GoLand, PHPStorm, vscode</h3>
+			<p id="49b3f86c-b5ee-456a-a19e-bd127d816d57" class="">GoLand IDE for Go projects, PHPStorm for PHP projects and Visual Studio Code for any general development or editing.</p>
+			<p id="9d731bd7-c707-4f22-9bdf-f2b4dcf6fdea" class="">
+			</p>
+			<h3 id="722b02bd-1d63-4af9-b244-0ab2153230f8" class="">DevOps - Ubuntu, Jenkins, Github Actions, Docker/Kubernetes, nginx</h3>
+			<p id="f4a3983a-a4bc-4249-8cd6-e8f6ac33b51d" class="">I generally use these tools for deployments and CI/CD pipelines</p>
+			<p id="0a08bcaf-39f2-4a3a-8fda-232ac2c0fdff" class="">
+			</p>
+			<h3 id="028b223b-4117-4d9b-92ef-83c5f20bc927" class="">Version Control - Git, Github, Bitbucket, Bitlabs</h3>
+			<p id="8699c351-9f66-402f-819b-0df84bea2c05" class="">I&#x27;m versatile in each of the following software for version control and tracking changes.</p>
+			<p id="f55d0bd7-2e3f-4b1d-a160-e34efbafefa1" class="">
+			</p>
+			<h3 id="7a0a84fd-d720-43f9-9740-2ebbef61768a" class="">Project Management - Pivotal Tracker, Trello, Linear </h3>
+			<p id="83845b84-736b-42a0-9ec9-844cb65d728f" class="">My number one editorial design tool of choice.</p>
+			<p id="25c279f1-8b4f-46fc-95e5-fc44970eb2a9" class="">
+			</p>
+			<h3 id="866bfec0-502d-42eb-a044-e6b3c288cf9a" class="">Documenting- Google Docs, Miro, Sheets, Slide, Microsoft Word and Excel</h3>
+			<p id="bf0770db-13ac-41a0-85aa-b5d98ade87f6" class="">My go-to for anything documentation, data management and presentation.</p>
+			<p id="9526db11-57d8-454b-a6b5-5264bff82435" class="">
+			</p>
+			<h3 id="25efac9d-f5b6-46b2-ad3f-44609c0209ca" class="">Communication - Slack, Zoom, Google Meet, Anydesk</h3>
+			<p id="80013ed3-ea5a-40ac-9c87-c7253bd06b2a" class="">I&#x27;m proficient in using any of these for providing technical support, communication, screen-sharing etc.</p>
+			<p id="3570a41c-5711-4fd6-a041-213338314155" class="">
+			</p>
+			<p id="2b85b29d-91bf-4b70-b1f1-02a81e20509c" class="">
+			</p>
+			<hr id="247126c8-d332-4e10-8e94-5653d9bf8c3b" />
+			<h1 id="bdbaa97b-7863-4c62-8e32-652e1e4cac3f" class="">Connect with me</h1>
+			<div id="48d560b7-d5b4-4a91-b2aa-d0d44dbf95be" class="column-list">
+				<div id="fdd03030-03b8-4bb2-804e-9076b59815b2" style="width:50%" class="column">
+					<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7eb1334a-c030-460c-8c45-79eb34745586">
+						<div style="font-size:1.5em"><span class="icon">✉️</span></div>
+						<div style="width:100%"><a href="mailto:okolaadouglas@gmail.com"><strong>Email</strong></a></div>
+					</figure>
+				</div>
+				<div id="bf315e12-31c1-4ad8-befd-80c4f1399aca" style="width:50%" class="column">
+					<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="229d1404-ae70-4a76-9cda-4728a12185ab">
+						<div style="font-size:1.5em"><span class="icon">💻</span></div>
+						<div style="width:100%"><span style="border-bottom:0.05em solid"><strong>My Resume</strong></span></div>
+					</figure>
+				</div>
+			</div>
+			<div id="7b626c4e-a04e-4c6b-a00a-4dcee9516cae" class="column-list">
+				<div id="bfca5262-4294-4866-945b-7f61fd3a65a9" style="width:50%" class="column">
+					<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="825519a5-9ba2-40ba-9c84-977d666fc1d2">
+						<div style="font-size:1.5em"><img class="icon" src="images/linkedin.png" /></div>
+						<div style="width:100%"><a href="https://www.linkedin.com/in/douglas-okolaa/"><span style="border-bottom:0.05em solid"><strong>LinkedIn</strong></span></a></div>
+					</figure>
+				</div>
+				<div id="a9197003-2af0-4cdf-bb89-407b16048495" style="width:50%" class="column">
+					<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b63ef6a6-2459-4a09-94dd-8387420a366f">
+						<div style="font-size:1.5em"><img class="icon" src="images/GitHub-Mark-32px.png" /></div>
+						<div style="width:100%"><a href="https://github.com/douglasokolaa"><span style="border-bottom:0.05em solid"><strong>Github</strong></span></a></div>
+					</figure>
+				</div>
+			</div>
+			<p id="b762ef45-944e-475f-822d-d616e0d97535" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>
