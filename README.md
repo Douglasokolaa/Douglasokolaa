@@ -33,7 +33,7 @@ keep.
   AI-assisted reply suggestions.
 - **[termii-php](https://github.com/douglasokolaa/termii-php)**: my
   open-source PHP SDK for Termii services.
-- **Alvanda and Assentir CRM**: two products I led from blank page
+- **Alvanda**: a business process platform I led from blank page
   through production launch.
 
 ## Currently open to
